@@ -1,0 +1,3 @@
+[    3557ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://www.team-bhp.com/themes/bhp/images/cta/ibb-price-check/ibb-headbg.png:0
+[    3672ms] [ERROR] Attestation check for Shared Storage on https://www.googleadservices.com failed. @ https://www.googleadservices.com/pagead/managed/js/activeview/current/reach_worklet.html:0
+[    3676ms] [ERROR] Attestation check for Shared Storage on https://www.googleadservices.com failed. @ https://www.googleadservices.com/pagead/managed/js/activeview/current/reach_worklet.html:0

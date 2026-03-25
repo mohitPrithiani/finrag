@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__ide__getDiagnostics",
+      "Bash(javap -classpath ~/.m2/repository/org/springframework/ai/spring-ai-core/1.0.0-M3/spring-ai-core-1.0.0-M3.jar org.springframework.ai.vectorstore.SearchRequest)",
+      "Bash(javap -classpath ~/.m2/repository/org/springframework/ai/spring-ai-core/1.0.0-M3/spring-ai-core-1.0.0-M3.jar org.springframework.ai.document.Document)",
+      "Bash(mvn clean:*)",
+      "Bash(docker-compose up:*)",
+      "Bash(docker compose:*)",
+      "Bash(find /Users/_mohitprithiani/Downloads/finrag -maxdepth 2 \\\\\\(-name *.md -o -name .cursorrules -o -name .github -o -name Makefile \\\\\\))",
+      "mcp__playwright__browser_navigate",
+      "Bash(brew install:*)"
+    ]
+  }
+}

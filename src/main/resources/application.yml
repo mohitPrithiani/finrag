@@ -1,0 +1,57 @@
+spring:
+  application:
+    name: finrag
+
+  datasource:
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/finrag}
+    username: ${DB_USERNAME:postgres}
+    password: ${DB_PASSWORD:postgres}
+    driver-class-name: org.postgresql.Driver
+
+  servlet:
+    multipart:
+      max-file-size: 50MB
+      max-request-size: 50MB
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+  ai:
+    openai:
+      api-key: ${OPENAI_API_KEY}          # Set via env var
+      chat:
+        options:
+          model: gpt-4o
+          temperature: 0.2               # Low temp = more factual answers
+          max-tokens: 1500
+      embedding:
+        options:
+          model: text-embedding-3-small  # Cost-efficient, high quality
+
+    vectorstore:
+      pgvector:
+        index-type: HNSW
+        distance-type: COSINE_DISTANCE
+        dimensions: 1536                 # Matches text-embedding-3-small
+
+# RAG tuning knobs (tweak these as you experiment)
+finrag:
+  rag:
+    chunk-size: 500          # Tokens per chunk
+    chunk-overlap: 100       # Overlap to preserve context across chunks
+    top-k: 5                 # Number of similar chunks to retrieve
+    similarity-threshold: 0.7
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+
+logging:
+  level:
+    com.finrag: INFO
+    org.springframework.ai: INFO
